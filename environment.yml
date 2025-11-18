@@ -1,0 +1,23 @@
+name: sib_viralmodel
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - biopython
+  - scipy
+  - networkx
+  - tqdm
+  - mesa
+  - rdkit
+  - pytorch
+  - pip
+  - pip:
+      - transformers>=4.36
