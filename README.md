@@ -19,22 +19,21 @@ This project aims to predict the molecular fitness of Influenza H5N1 variants an
 
 ## Folder Structure
 
-project-root/
-│
-├── /data/
-│   ├── processed/     # Cleaned/integrated data
-│   └──raw/           # Original datasets
-│
-│
-├── /docs/
-│   ├── articles/      # Research articles
-│   ├── guideline.pdf  # Work Guidelines
-│   ├── sota.pdf       # State of the Art review
-│   └── notebook.pdf   # Final Notebook
-│
-└── /scripts/
-    ├── module1/       # Molecular fitness prediction
-    └── module2/       # Population simulation
+project-root/<br>
+│<br>
+├── /data/<br>
+│   ├── processed/     # Cleaned/integrated data<br>
+│   └──raw/           # Original datasets<br>
+│<br>
+├── /docs/<br>
+│   ├── articles/      # Research articles<br>
+│   ├── guideline.pdf  # Work Guidelines<br>
+│   ├── sota.pdf       # State of the Art review<br>
+│   └── notebook.pdf   # Final Notebook<br>
+│<br>
+└── /scripts/<br>
+    ├── module1/       # Molecular fitness prediction<br>
+    └── module2/       # Population simulation<br>
 
 ## Key Python Packages
 
