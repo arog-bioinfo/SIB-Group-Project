@@ -1,7 +1,7 @@
-# SIB Group Project: Molecular Fitness Prediction & Population Simulation for Influenza H5N1
+# SIB Group Project: Molecular Fitness Prediction & Population Simulation of Viral Variants
 
 ## Overview
-This project aims to predict the molecular fitness of Influenza H5N1 variants and simulate population-level spread using machine learning and agent-based modeling. The project is divided into two modules:
+This project aims to predict the molecular fitness of viral variants and simulate population-level spread using machine learning and agent-based modeling. The project is divided into two modules:
 1. **Molecular Fitness Prediction:** Use genomic and drug interaction data to predict viral fitness.
 2. **Population Simulation:** Integrate fitness scores into an agent-based model to simulate interventions.
 
@@ -34,6 +34,7 @@ project-root/
 └── /scripts/
     ├── module1/       # Molecular fitness prediction
     └── module2/       # Population simulation
+```
 
 ## Key Python Packages
 
