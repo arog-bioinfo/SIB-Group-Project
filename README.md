@@ -112,3 +112,24 @@ The final files used for the molecular model (Module 1) are:
 - `data/omicron/genomic.fna` and `data/omicron/omicron_meta_clean.csv`
 
 Each row in the metadata files corresponds to a genome in the FASTA file, linked by the `accession` identifier.
+
+
+### External spike phenotype data (Bloom lab)
+
+We include the Bloom lab repository `SARS2-spike-predictor-phenos` as a git submodule under `external/SARS2-spike-predictor-phenos`.
+
+To fetch it:
+
+```bash
+git submodule update --init --recursive
+```
+
+Once the submodule is fetched, we can access the pre-computed phenotype tables:
+
+- `external/SARS2-spike-predictor-phenos/results/clade_phenotypes.csv`
+- `external/SARS2-spike-predictor-phenos/results/mutation_phenotypes.csv`
+
+
+We use these external tables to:
+- obtain clade-level spike phenotypes and growth rates for SARS-CoV-2 variants;
+- obtain mutation-level spike phenotypes (e.g., ACE2 binding, antibody escape) that can be linked to mutations observed in our NCBI sequences.
