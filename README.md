@@ -71,3 +71,44 @@ conda env create -f environment.yml
 # Activate it
 conda activate sib_viralmodel
 ```
+
+
+
+### Automatic download of NCBI Virus data
+
+The script `scripts/make_data.sh` uses the NCBI Datasets CLI to download SARS-CoV-2 genomes (Delta and Omicron) and their metadata from NCBI Virus.
+
+```bash
+./scripts/make_data.sh
+```
+
+The downloaded `.zip` files are stored in `data/raw/`. To inspect the contents (FASTA sequences and metadata):
+
+```bash
+unzip data/raw/delta.zip -d data/delta
+ls data/delta/ncbi_dataset/data
+```
+
+
+
+## Extract and clean metadata
+
+To extract the metadata tables from the NCBI packages and convert them into clean CSV files used in our analyses:
+
+```bash
+./scripts/extract_metadata.sh
+python scripts/clean_data.py
+```
+
+These scripts:
+
+- unzip the NCBI data packages into `data/delta/` and `data/omicron/`;
+- use `dataformat tsv virus-genome` to create metadata tables (`delta_meta.tsv`, `omicron_meta.tsv`);
+- convert and clean them into `delta_meta_clean.csv` and `omicron_meta_clean.csv` (standardized column names, removal of entries without collection date).
+
+The final files used for the molecular model (Module 1) are:
+
+- `data/delta/genomic.fna` and `data/delta/delta_meta_clean.csv`
+- `data/omicron/genomic.fna` and `data/omicron/omicron_meta_clean.csv`
+
+Each row in the metadata files corresponds to a genome in the FASTA file, linked by the `accession` identifier.
