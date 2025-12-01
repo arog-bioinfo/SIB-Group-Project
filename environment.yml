@@ -19,5 +19,6 @@ dependencies:
   - rdkit
   - pytorch
   - pip
+  - ncbi-datasets-cli
   - pip:
       - transformers>=4.36
