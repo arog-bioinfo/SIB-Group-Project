@@ -206,7 +206,7 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Project data (not tracked)
+
 # ----------------- Project data (not tracked) -----------------
 
 data/raw/
