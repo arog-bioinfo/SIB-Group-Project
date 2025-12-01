@@ -1,0 +1,3 @@
+[submodule "external/SARS2-spike-predictor-phenos"]
+	path = external/SARS2-spike-predictor-phenos
+	url = https://github.com/jbloomlab/SARS2-spike-predictor-phenos
