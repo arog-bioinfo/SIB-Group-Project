@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\geometry{a4paper, margin=1in}
+\usepackage[acronym]{glossaries} % For glossary and acronyms
+\makeglossaries % Required to generate glossary files
+\usepackage[backend=biber, style=numeric]{biblatex} % For bibliography
+\addbibresource{references.bib} % Your .bib file
+
+% Load acronyms from the separate file
+\loadglsentries{acronyms.tex} % Loads acronyms for use in the document
+
+\title{State of the Art: Predicting Viral Fitness and Epidemiological Simulation}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Viral variant surveillance is a global priority for pandemic preparedness, requiring the timely identification of the small fraction of strains that will drive new waves of infection\cite{harrington_evolution_2021}. The SARS-CoV-2 virus has demonstrated rapid mutation, resulting in multiple infection waves\cite{tao_biological_2021}. Traditionally, epidemiological models, such as compartmental models, focus on short-term predictions or struggle to incorporate complex interventions and pathogen genetic evolution. This project objective is to build predictive systems that use molecular characteristics to estimate viral fitness and integrate this information into detailed epidemiological simulations.
+
+\section{Module 1: Molecular-Level Prediction of Viral Fitness}
+
+The first module focuses on developing models that predict the transmissibility or spread risk of a new variant based on its molecular characteristics. This work relies on large-scale genomic surveillance, with repositories such as GISAID providing millions of SARS-CoV-2 sequences for analysis.\cite{levi_predicting_2024, obermeyer_analysis_2022, wang_biophysical_2024, bloom_fitness_2023}
+
+\subsection{Predictive Methodologies and Features}
+
+Recent state-of-the-art approaches use machine learning models,often gradient boosting algorithms,to estimate the early spread potential of a newly detected variant. These models have achieved high predictive performance (AUC up to $\sim 90\%$ after 1--2 weeks of observation), showing that molecular and early epidemiological signals can be informative.
+
+Key molecular features used in prediction include:
+
+\begin{itemize}
+    \item \textbf{Spike Protein Mutations:} Mutations in the Spike protein are strong predictors of spread risk, although relevant mutations can occur in other genomic regions as well.
+    \item \textbf{Genetic Distance (Week-Distance):} Measures such as Jaccard distance quantify how distinct a new variant is from previously dominant ones. Variants that later become dominant typically show larger mutational differences, often reflecting immune escape.
+    \item \textbf{Genomic Diversity (Entropy and Heterogeneity):} Entropy-based metrics capture genetic diversity among circulating strains; higher diversity can signal evolutionary dynamics that enable the emergence of fitter variants.
+\end{itemize}
+
+These features act as early indicators rather than deterministic measures of transmissibility, and their predictive value depends on sampling and epidemiological context.
+
+\section{Module 2: Epidemiological Simulation and Spread}
+
+To capture the heterogeneous dynamics of variant spread, this project employs Agent-Based Models (ABMs), which offer finer granularity and flexibility than traditional compartmental models (e.g., SIR). ABMs explicitly represent individual agents and their interactions, enabling the simulation of population heterogeneity, complex interventions, and realistic contact structures.
+
+\subsection{Agent-Based Modeling Frameworks}
+
+State-of-the-art ABM platforms such as Covasim~\cite{kerr_covasim_2021, solares_adaptation_2023} and PhASETraCE~\cite{nguyen_multi-scale_2025} model transmission dynamics by simulating each individual as an autonomous agent characterized by demographic attributes (e.g., age, comorbidities), disease states (susceptible, exposed, infectious, recovered, deceased), and realistic contact networks (e.g., households, schools, workplaces, community settings). By incorporating these features, ABMs can reproduce population-level patterns of infection spread, intervention effects, and behavioral heterogeneity.
+
+\section{Conclusion}
+
+The current State of the Art shows that combining molecular characteristics with epidemiological simulation provides a promising framework for anticipating the emergence and spread of new variants. Module 1 demonstrates that large-scale genomic surveillance and machine learning can detect early molecular signatures linked to viral fitness, while Module 2 highlights how agent-based models capture realistic transmission dynamics and intervention effects. Together, these approaches illustrate a shift toward multi-scale systems that connect viral evolution with population-level outcomes, offering a more adaptive foundation for future infectious disease surveillance.
+
+% Print the bibliography
+\printbibliography
+
+\end{document}
+
