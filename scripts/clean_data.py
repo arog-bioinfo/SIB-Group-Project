@@ -15,7 +15,16 @@ def clean_tsv_to_csv(tsv_path, csv_path):
 
 base = Path("data")
 
-clean_tsv_to_csv(base / "delta"   / "delta_meta.tsv",
-                 base / "delta"   / "delta_meta_clean.csv")
-clean_tsv_to_csv(base / "omicron" / "omicron_meta.tsv",
-                 base / "omicron" / "omicron_meta_clean.csv")
+variants = {
+    "b1": "b1_meta",
+    "alpha": "alpha_meta",
+    "beta": "beta_meta",
+    "delta": "delta_meta",
+    "omicron_ba1": "omicron_meta",
+    "ba2": "ba2_meta",
+}
+
+for v, stem in variants.items():
+    tsv = base / v / f"{stem}.tsv"
+    csv = base / v / f"{stem}_clean.csv"
+    clean_tsv_to_csv(tsv, csv)

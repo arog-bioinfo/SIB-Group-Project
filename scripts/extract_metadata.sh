@@ -1,17 +1,21 @@
 #!/bin/bash
 set -e
 
-# Unzip packages (idempotent: overwrite is fine)
-unzip -o data/raw/delta.zip   -d data/delta
-unzip -o data/raw/omicron.zip -d data/omicron
+# Variants and nice names
+variants=("b1" "alpha" "beta" "delta" "omicron_ba1" "ba2")
 
-# Create TSV metadata tables from NCBI packages
-dataformat tsv virus-genome \
-  --package data/raw/delta.zip \
-  --fields accession,virus-name,geo-location,isolate-collection-date \
-  > data/delta/delta_meta.tsv
+# Unzip all NCBI packages into separate folders
+for v in "${variants[@]}"; do
+  mkdir -p "data/${v}"
+  unzip -o "data/raw/${v}.zip" -d "data/${v}"
+done
 
-dataformat tsv virus-genome \
-  --package data/raw/omicron.zip \
-  --fields accession,virus-name,geo-location,isolate-collection-date \
-  > data/omicron/omicron_meta.tsv
+# Create TSV metadata tables using dataformat
+for v in "${variants[@]}"; do
+  dataformat tsv virus-genome \
+    --package "data/raw/${v}.zip" \
+    --fields accession,virus-name,geo-location,isolate-collection-date \
+    > "data/${v}/${v}_meta.tsv"
+done
+
+
