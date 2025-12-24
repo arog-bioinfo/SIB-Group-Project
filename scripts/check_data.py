@@ -6,7 +6,7 @@ base = Path("data")
 # Map variant folder → clean metadata file stem
 variants = {
     "b1": "b1_meta_clean",
-    "alpha": "alpha_meta_clean",
+    "xbb15": "xbb15_meta_clean",
     "beta": "beta_meta_clean",
     "delta": "delta_meta_clean",
     "omicron_ba1": "omicron_meta_clean",

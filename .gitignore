@@ -212,9 +212,17 @@ __marimo__/
 data/raw/
 data/delta/
 data/omicron/
+data/b1/
+data/ba2/
+data/beta/
+data/omicron_ba1/
+data/xbb15/
 
-# Large bio files
-*.zip
-*.fna
-*.tsv
-*.csv
+# Project data (não versionado bruto)
+data/raw/
+data/*/ncbi_dataset/data/data_report.jsonl
+data/*/ncbi_dataset/data/genomic.fna
+data/*/ncbi_dataset/data/dataset_catalog.json
+data/*/ncbi_dataset/data/virus_dataset.md
+data/*/README.md
+data/*/md5sum.txt

@@ -17,7 +17,7 @@ base = Path("data")
 
 variants = {
     "b1": "b1_meta",
-    "alpha": "alpha_meta",
+    "xbb15": "xbb15_meta",
     "beta": "beta_meta",
     "delta": "delta_meta",
     "omicron_ba1": "omicron_meta",

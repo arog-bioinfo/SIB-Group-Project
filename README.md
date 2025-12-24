@@ -82,7 +82,16 @@ The script `scripts/make_data.sh` uses the NCBI Datasets CLI to download SARS-Co
 ./scripts/make_data.sh
 ```
 
-The downloaded `.zip` files are stored in `data/raw/`. To inspect the contents (FASTA sequences and metadata):
+
+The downloaded `.zip` files are stored in `data/raw/` with the following names:
+
+- `b1.zip`
+- `xbb15.zip`
+- `beta.zip`
+- `delta.zip`
+- `omicron_ba1.zip`
+- `ba2.zip`
+
 
 ```bash
 unzip data/raw/delta.zip -d data/delta
@@ -100,19 +109,19 @@ To extract the metadata tables from the NCBI packages and convert them into clea
 python scripts/clean_data.py
 ```
 
+
 These scripts:
 
-- unzip the NCBI data packages into `data/delta/` and `data/omicron/`;
-- use `dataformat tsv virus-genome` to create metadata tables (`delta_meta.tsv`, `omicron_meta.tsv`);
-- convert and clean them into `delta_meta_clean.csv` and `omicron_meta_clean.csv` (standardized column names, removal of entries without collection date).
+- unzip the NCBI data packages in `data/raw/` into variant-specific folders (e.g. `data/b1/`, `data/beta/`, `data/delta/`, `data/omicron_ba1/`, `data/ba2/`, `data/xbb15/`);
+- use `dataformat tsv virus-genome` to create metadata tables (`*_meta.tsv`) for each variant with accession, virus name, geographic location, and collection date;
+- convert and clean them into `*_meta_clean.csv` (standardized column names, removal of entries without collection date).
 
-The final files used for the molecular model (Module 1) are:
+The final files used for the molecular model (Module 1) are, for each variant:
 
-- `data/delta/genomic.fna` and `data/delta/delta_meta_clean.csv`
-- `data/omicron/genomic.fna` and `data/omicron/omicron_meta_clean.csv`
+- `data/<variant>/ncbi_dataset/data/genomic.fna` :  full genome sequences
+- `data/<variant>/<variant>_meta_clean.csv` : cleaned metadata aligned to those sequences
 
 Each row in the metadata files corresponds to a genome in the FASTA file, linked by the `accession` identifier.
-
 
 ### External spike phenotype data (Bloom lab)
 

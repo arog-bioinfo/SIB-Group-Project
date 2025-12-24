@@ -22,8 +22,8 @@ download_if_missing () {
 # 1) B.1 (ancestral-like)
 download_if_missing "B.1" "b1"
 
-# 2) Alpha (B.1.1.7)
-download_if_missing "B.1.1.7" "alpha"
+# 2) XBB.1.5 (Omicron subvariant)
+download_if_missing "XBB.1.5" "xbb15"
 
 # 3) Beta (B.1.351)
 download_if_missing "B.1.351" "beta"
