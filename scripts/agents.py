@@ -32,8 +32,12 @@ class VirusAgentContinuous(Agent):
 
     def try_to_infect_nearby(self):
         pos = self.pos
-        neighbors = self.model.space.get_neighbors(pos, radius=self.model.infection_radius, include_center=False)
-
+        space = self.model.space
+        
+        if hasattr(space, "_agent_region"):
+            neighbors = self.model.space.get_neighbors(self.pos, self.model.infection_radius, include_center=False, same_country_only=True)
+        else:
+            neighbors = self.model.space.get_neighbors(pos, radius=self.model.infection_radius, include_center=False)
 
         for other in neighbors:
             if other.state is State.SUSCEPTIBLE:
