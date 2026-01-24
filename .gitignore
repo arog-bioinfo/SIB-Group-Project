@@ -226,3 +226,19 @@ data/*/ncbi_dataset/data/dataset_catalog.json
 data/*/ncbi_dataset/data/virus_dataset.md
 data/*/README.md
 data/*/md5sum.txt
+
+# Ignore raw heavy data
+data/raw/
+data/*/ncbi_dataset/
+
+# Allow processed ML-ready datasets
+!data/processed/
+!data/processed/*.csv
+!data/processed/*.pkl
+
+# Ignore trained models
+models/
+*.joblib
+*.h5
+*.pt
+
