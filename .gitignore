@@ -241,4 +241,5 @@ models/
 *.joblib
 *.h5
 *.pt
-
+data/processed/final_dataset_with_spike.csv
+data/processed/spike_sequences_by_accession.csv
