@@ -38,7 +38,7 @@ project-root/
 │   ├── articles/
 │   │   ├── module1/             # Papers for molecular fitness modeling
 │   │   └── module2/             # Papers for ABMs and epidemiological simulation
-│   ├── sota/LaTeX_files/        # State-of-the-art write‑up (LaTeX + references)
+│   ├── sota/LaTeX_files/        # State-of-the-art write-up (LaTeX + references)
 │   ├── guideline.pdf            # Course project guidelines
 │   └── notebook.pdf             # Final compiled notebook / report (if exported)
 │
@@ -50,7 +50,7 @@ project-root/
 │   ├── 01_data_epi_exploration.ipynb   # Early EDA on epi data (optional)
 │   ├── 02_Genomic_EDA.ipynb            # Genomic + phenotype EDA (Module 1)
 │   ├── 03_ML_FeatureEng.ipynb          # Baseline ML on tabular features
-│   ├── 05_ESM2_Embeddings.ipynb        # ESM‑2 embeddings + XGBoost
+│   ├── 05_ESM2_Embeddings.ipynb        # ESM-2 embeddings + XGBoost
 │   └── 02_module.ipynb                 # ABM simulations (Module 2)
 │
 ├── results/
@@ -63,18 +63,15 @@ project-root/
 │   └── data_summary.csv
 │
 ├── scripts/
+│   ├── agents.py                       # Agent states and local infection logic
+│   ├── model.py                        # Core ABM and policy variants
+│   ├── borderedspace.py                # Continuous space with country borders
 │   ├── 04_Extract_Spike_Sequences.py   # Extract & align spike sequences
 │   ├── check_data.py                   # Data sanity checks
 │   ├── clean_data.py                   # Cleaning metadata tables
 │   ├── load_external_phenos.py         # Integrate Bloom lab phenotypes
 │   ├── extract_metadata.sh             # Metadata extraction from NCBI packages
-│   ├── make_data.sh                    # Automated NCBI download pipeline
-│   └── make_data.sh                    # (bash helpers for Module 1 pipeline)
-│
-├── abm/
-│   ├── agents.py                       # Agent states and local infection logic
-│   ├── model.py                        # Core ABM and policy variants
-│   └── borderedspace.py                # Continuous space with country borders
+│   └── make_data.sh                    # Automated NCBI download pipeline
 │
 ├── environment.yml
 ├── LICENSE
