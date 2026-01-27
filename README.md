@@ -379,10 +379,6 @@ Implements the base ABM and two policy variants.
 
 Implements a scalar policy index:
 
-\[
-m \in [0, 1]
-\]
-
 - `measures_index` is validated in `[0, 1]`.
 
 ### Configuration
