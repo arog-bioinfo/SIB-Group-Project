@@ -8,18 +8,21 @@ dependencies:
   - python=3.11
   - numpy
   - pandas
+  - scipy
   - scikit-learn
+  - joblib
   - xgboost
   - matplotlib
   - seaborn
-  - biopython
-  - scipy
   - networkx
   - tqdm
   - mesa
+  - biopython
   - rdkit
   - pytorch
-  - pip
+  - ipython
+  - ipykernel
   - ncbi-datasets-cli
+  - pip
   - pip:
       - transformers>=4.36

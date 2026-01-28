@@ -26,32 +26,30 @@ This project aims to predict the molecular fitness of viral variants and simulat
 ```bash
 project-root/
 │
-├── data/
-│   ├── raw/                     # Original NCBI datasets (ZIP) and intermediate unpacked folders
-│   └── processed/               # Integrated and cleaned data used by notebooks
-│       ├── final_dataset.csv
-│       ├── ml_splits_scaled.pkl
-│       ├── ncbi_genomes.csv
-│       └── spike_mutations_predictor.pkl
+├── data/                        # Data used by notebooks
+│   ├── final_dataset.csv
+│   ├── ml_splits_scaled.pkl
+│   ├── ncbi_genomes.csv
+│   └── spike_mutations_predictor.pkl
 │
 ├── docs/
 │   ├── articles/
 │   │   ├── module1/             # Papers for molecular fitness modeling
 │   │   └── module2/             # Papers for ABMs and epidemiological simulation
-│   ├── sota/LaTeX_files/        # State-of-the-art write-up (LaTeX + references)
+│   ├── SOTA.pdf                 # State-of-the-art
 │   ├── guideline.pdf            # Course project guidelines
-│   └── notebook.pdf             # Final compiled notebook / report (if exported)
 │
 ├── external/
 │   └── SARS2-spike-predictor-phenos/   # Bloom lab submodule with spike phenotypes
 │
 ├── notebooks/
-│   ├── 01_GenData_preparation.ipynb    # Data download + integration (Module 1)
-│   ├── 01_data_epi_exploration.ipynb   # Early EDA on epi data (optional)
-│   ├── 02_Genomic_EDA.ipynb            # Genomic + phenotype EDA (Module 1)
-│   ├── 03_ML_FeatureEng.ipynb          # Baseline ML on tabular features
-│   ├── 05_ESM2_Embeddings.ipynb        # ESM-2 embeddings + XGBoost
-│   └── 02_module.ipynb                 # ABM simulations (Module 2)
+│   ├── 1.1_data_epi_exploration.ipynb  # Early EDA on epi data (optional)
+│   ├── 1.1_GenData_preparation.ipynb   # Data download + integration (Module 1)
+│   ├── 1.2_Genomic_EDA.ipynb           # Genomic + phenotype EDA (Module 1)
+│   ├── 1.3_ML_FeatureEng.ipynb         # Baseline ML on tabular features
+│   ├── 1.5_ESM2_Embeddings.ipynb       # ESM-2 embeddings + XGBoost
+│   ├── 2_module.ipynb                  # ABM simulations (Module 2)
+│   └── Final.ipynb                     # Integration Testing
 │
 ├── results/
 │   ├── figures/
@@ -63,9 +61,15 @@ project-root/
 │   └── data_summary.csv
 │
 ├── scripts/
-│   ├── agents.py                       # Agent states and local infection logic
-│   ├── model.py                        # Core ABM and policy variants
-│   ├── borderedspace.py                # Continuous space with country borders
+│   ├── Integration
+│   │   └── integration.py              # Integration of the two modules
+│   ├── module1
+│   │   └──  viral_fitness.py           # Calculation of Viral Fitness
+│   ├── module1
+│   │   ├── agents.py                   # Agent states and local infection logic
+│   │   ├── model.py                    # Core ABM and policy variants
+│   │   ├── borderedspace.py            # Continuous space with country borders
+│   │   └──  simulation.py              # Helper functions for simulations
 │   ├── 04_Extract_Spike_Sequences.py   # Extract & align spike sequences
 │   ├── check_data.py                   # Data sanity checks
 │   ├── clean_data.py                   # Cleaning metadata tables
@@ -77,24 +81,6 @@ project-root/
 ├── LICENSE
 └── README.md
 ```
-
-## Key Python Packages
-
-| Package       | Purpose                   |
-|---------------|---------------------------|
-| numpy         | Numerical operations      |
-| pandas        | Data manipulation         |
-| scikit-learn  | Machine learning          |
-| matplotlib    | Plotting                  |
-| seaborn       | Visualizations            |
-| biopython     | Genomic data processing   |
-| rdkit         | Cheminformatics           |
-| torch         | Deep learning             |
-| transformers  | Sequence modeling         |
-| mesa          | Agent-based simulation    |
-| networkx      | Network analysis          |
-| scipy         | Scientific computing      |
-| tqdm          | Progress bars             |
 
 ## Setup
 
